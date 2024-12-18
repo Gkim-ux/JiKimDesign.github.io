@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jihyun Kim Portfolio</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffff;
+            background-color: #212121;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #ffff;
+        }
+
+        .portfolio-section {
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+        .portfolio-item a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: regular;
+        }
+
+        .contact-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #353535;
+            border-radius: 8px;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #353535;
+            border-radius: 4px;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            background-color: #353535;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>Jihyun Kim</h2>
+        </div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Inspire through creativity, impact through design.</h1>
+        <p>Hi! My name is Jihyun Kim, a graphic designer from Toronto, Canada.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-item">
+            <a href="portfolio-details.html">
+                <p>TEMPLELET <img src="111-02.jpg" alt="Portfolio Item">
+                <p>TYPOGRAPHIC <img src="222-01.jpg" alt="Portfolio Item">
+                <p>POSTER <img src="444.jpg" alt="Portfolio Item">
+                <p>BOOKLET <img src="333-01.jpg" alt="Portfolio Item">
+                
+            </a>
+        </div>
+        <!-- Additional portfolio items can be added here -->
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <textarea rows="4" placeholder="Tell me about your project" required></textarea>
+            <button type="submit">Send →</button>
+        </form>
+    </section>
+
+    <footer>
+        Email : kjh0320219k@gmail.com
+        Instargram : ji._____.k
+
+        <p>&copy; 101478076 Jihyun Kim </p>
+    </footer>
+
+</body>
+</html>
