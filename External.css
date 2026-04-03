@@ -1,0 +1,230 @@
+/* ==========================================
+   Project 1: GBC Responsive Website
+   Student: Jihyun Kim
+   ========================================== */
+
+/* 1. Global Variables & Reset */
+:root {
+    --gbc-navy: #002d62;    /* George Brown College Navy */
+    --accent-blue: #2563eb;  /* Brighter Blue for CTA */
+    --dark-grey: #1f2937;
+    --light-text: #f3f4f6;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-grey);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Header & Navigation */
+header {
+    background: var(--white);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-blue);
+}
+
+/* 3. Hero Section */
+.hero {
+    padding: 100px 0;
+    background-color: var(--gbc-navy); 
+    color: var(--light-text);
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #d1d5db;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--accent-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background-color: #1d4ed8;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+}
+
+/* 4. Responsive Grid Section */
+.grid-section {
+    padding: 80px 0;
+    background-color: var(--gbc-navy); 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: var(--white);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: var(--transition);
+}
+
+/* Styling for the three images you requested */
+.card-icon-img {
+    width: 100%;
+    max-width: 250px; /* 카드 이미지 크기 조절 */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.grid-card h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.grid-card p {
+    color: #d1d5db;
+    font-size: 1rem;
+    text-align: left; /* 설명글은 왼쪽 정렬이 가독성이 좋습니다 */
+}
+
+.grid-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* 5. Footer */
+footer {
+    background-color: #001a3a; 
+    color: #9ca3af;
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p:first-child {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* 6. Media Queries (Responsive Design) */
+@media screen and (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    .main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        width: 100%;
+        order: -1;
+    }
+    .nav-menu {
+        display: none; 
+    }
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+}

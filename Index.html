@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBC Web Design | Project 1: Responsive Website</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. Global Variables & Reset */
+        :root {
+            --gbc-navy: #002d62;    /* George Brown College Navy */
+            --accent-blue: #2563eb;  /* Brighter Blue for CTA */
+            --dark-grey: #1f2937;
+            --light-text: #f3f4f6;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 2. Header & Navigation */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* 3. Hero Section */
+        .hero {
+            padding: 100px 0;
+            background-color: var(--gbc-navy); 
+            color: var(--light-text);
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #d1d5db;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block;
+        }
+
+        /* 4. Responsive Grid Section */
+        .grid-section {
+            padding: 80px 0;
+            background-color: var(--gbc-navy); 
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .grid-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--white);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .grid-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        /* Added Styling for Card Images */
+        .card-icon-img {
+            width: 80px; /* 이미지 크기 조절 */
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%; /* 원형으로 표시하려면 추가 */
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .grid-card h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .grid-card p {
+            color: #d1d5db;
+            font-size: 1rem;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 5. Footer */
+        footer {
+            background-color: #001a3a; 
+            color: #9ca3af;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p:first-child {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        /* 6. Media Queries */
+        @media screen and (max-width: 1024px) {
+            .hero-text h1 { font-size: 2.8rem; }
+            .main-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-wrapper { flex-direction: column; text-align: center; }
+            .hero-image { width: 100%; order: -1; }
+            .nav-menu { display: none; }
+            .main-grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="George Brown College Logo">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-wrapper">
+                <div class="hero-text">
+                    <h1>George Brown <br>Polytechnic</h1>
+                    <p>
+                        Explore our PROGRAMS 195+ degrees and certificates to choose from. Your future is unlimited.
+                    </p>
+                    <a href="#" class="cta-button">Explore More</a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="George Brown College Waterfront Campus-crop.jpg" alt="George Brown College Waterfront Campus">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="grid-section container">
+            <h2>Our Core Competencies</h2>
+            
+            <div class="main-grid">
+                <div class="grid-card">
+                    <img src="about.jpg" alt="About GBC Icon" class="card-icon-img">
+                    <h3>About GBC</h3>
+                    <p>George Brown College is a top institution known for its career-focused education and strong industry connections. Our diverse community of students, faculty, staff, and alumni is dedicated to excellence and making a positive impact on society.</p>
+                </div>
+
+                <div class="grid-card">
+                    <img src="core.png" alt="Core Curriculum Icon" class="card-icon-img">
+                    <h3>Core Curriculum</h3>
+                    <p>Every program is built on a foundation of essential disciplines, including communication, math, science, social sciences, business, digital literacy, and wellness. These courses equip students with the diverse skills needed for career success.</p>
+                </div>
+
+                <div class="grid-card">
+                    <img src="career.jpg" alt="Career-Driven Education Icon" class="card-icon-img">
+                    <h3>Career-Driven Education</h3>
+                    <p>Students gain practical, industry-aligned skills to tackle workforce challenges. Developed with industry experts, our programs ensure graduates make an immediate impact.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; George Brown College </p>
+            <p>416-415-2000 | ask.george@georgebrown.ca</p>
+        </div>
+    </footer>
+
+</body>
+</html>
